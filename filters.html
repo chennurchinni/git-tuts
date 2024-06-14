@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="personCtrl">
+
+<p>The first name is {{firstName | lowercase}}</p>   <!---lowercase--->
+<p>The last name is {{ lastName | uppercase }}</p>   <!---uppercase--->
+<p>The price is {{price | currency}}</p>         <!---price--->
+<p>Filters of letter A is:</p>            <!---filter--->
+<p ng-repeat="x in names | filter : '1'">{{x}}</p>
+
+</div>
+
+<script>
+var app=angular.module('myApp', []);
+app.controller('personCtrl', function($scope) {
+    $scope.firstName = "yashaswini",
+    $scope.lastName = "siddavatam"
+    $scope.price=32;
+    $scope.names=['chinni1','geetha','sowmya','bunny','jerusha','deepthi'];
+});
+</script>
+
+</body>
+</html>

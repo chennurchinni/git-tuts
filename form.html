@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="myapp" ng-controller="formctrl">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <div>
+        <form name="myform">
+            FirstName:<input type="text" ng-model="firstname"><br><br>
+            LastName:<input type="text" ng-model="lastname"><br><br>
+            MailId:<input type="text" ng-model="Mailid"><br><br>
+            Gender : <input type="radio" ng-model="myvar" value="male">Male
+                     <input type="radio" ng-model="myvar" value="female">Female <br><br>
+            Interested Activities: <br>
+                                    <input type="checkbox" > Games <br>
+                                    <input type="checkbox">Dance <br>
+                                    <input type="checkbox">Reading books <br><br>
+            Select your country:
+            <select>
+                <option value=" ">
+                <option value="India">India
+                <option value="America">America</option>
+                <option value="Uk">Uk</option>
+                <option value="other">other</option>
+            </select>
+        </form>
+    </div>
+    <script>
+        var app=angular.module('myapp',[]);
+
+        app.controller('formctrl',function($scope){
+            $scope.firstname='Yashaswini';
+            $scope.lastname='Siddavatam';
+            $scope.Mailid='19057cme035@gmail.com';
+            $scope.myvar='female';
+        });
+    </script>
+</body>
+</html>
